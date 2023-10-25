@@ -21,22 +21,26 @@ int main()
     printf("Ingrese el segundo numero: \n");
     scanf("%d", &num2);
 
-if (num1 > 0 && num2 > 0) // VERIFICA QUE EL NUMERO SEA POSITIVO
-{
-   cantidad1 = contador(num1);
-    printf("La cantidad de digitos del primer numero es: %d", cantidad1);
-    printf("\n");
-     cantidad2 = contador(num2);
-    printf("La cantidad de digitos del segundo numero es: %d", cantidad2);
-}
-else
-{
-    printf("Uno de los numeros ingresados es negativo o cero. Reintente");
-}
-
-
-    
-
+    if (num1 > 0 && num2 > 0) // VERIFICA QUE EL NUMERO SEA POSITIVO
+    {
+        cantidad1 = contador(num1);
+        printf("La cantidad de digitos del primer numero es: %d", cantidad1);
+        printf("\n");
+        cantidad2 = contador(num2);
+        printf("La cantidad de digitos del segundo numero es: %d", cantidad2);
+        printf("\n");
+        if (cantidad1 > cantidad2)
+        {
+            printf("El numero con mayor cantidad de digitos es el numero %d", num1);
+        }else{
+            printf("El numero con mayor cantidad de digitos es el numero %d", num2);
+        }
+        
+    }
+    else
+    {
+        printf("Uno de los numeros ingresados es negativo o cero. Reintente");
+    }
 
     return 0;
 }
