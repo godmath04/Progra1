@@ -45,54 +45,69 @@ int main()
     scanf("%d", &num1);
     printf("Ingrese el segundo numero: \n");
     scanf("%d", &num2);
+    printf("\n");
 
     if (num1 > 0 && num2 > 0) // VERIFICA QUE EL NUMERO SEA POSITIVO
     {
-        int scan = 0;
-        printf("Seleccione la actividad que desea realizar con:\n 1. Cantidad de digitos.\n 2. El numero es primo o no");
-        scanf("%d", &scan);
-        switch (scan)
-        {
-        case 1: printf("Cantidad de Digitos");
-            /* code */
-            break;
-        case 2: printf("Numero es primo o no");
-            break;
-        default:
-            break;
-        }
-        cantidad1 = contador(num1);
-        printf("La cantidad de digitos del primer numero es: %d", cantidad1);
-        printf("\n");
-        cantidad2 = contador(num2);
-        printf("La cantidad de digitos del segundo numero es: %d", cantidad2);
-        printf("\n");
-        if (cantidad1 > cantidad2)
-        {
-            printf("El numero con mayor cantidad de digitos es el numero %d \n", num1);
-        }
-        else
-        {
-            printf("El numero con mayor cantidad de digitos es el numero %d \n", num2);
-        }
 
-        printf("Ahora vamos a verificar que los numeros ingresados sean o no primos: \n");
-        if (esPrimo(num1) == 1)
+        int scan = 0;
+        printf("Seleccione la actividad que desea realizar con:\n 1. Cantidad de digitos.\n 2. El numero es primo o no.\n 100. Salir\n");
+        scanf("%d", &scan);
+        printf("\n");
+        while (scan != 100)
         {
-            printf("El numero %d es primo.\n", num1);
-        }
-        else
-        {
-            printf("El numero %d no es primo \n", num1);
-        }
-        if (esPrimo(num2) == 1)
-        {
-            printf("El numero %d es primo.\n", num2);
-        }
-        else
-        {
-            printf("El numero %d no es primo \n", num2);
-        }
+            // BUCLE SWITCH PARA ELEGIR LO QUE EL USUARIO DESEE REALIZAR
+            switch (scan)
+            {
+            case 1:
+                printf("Cantidad de Digitos\n");
+                cantidad1 = contador(num1);
+                printf("La cantidad de digitos del primer numero es: %d", cantidad1);
+                printf("\n");
+                cantidad2 = contador(num2);
+                printf("La cantidad de digitos del segundo numero es: %d", cantidad2);
+                printf("\n");
+                if (cantidad1 > cantidad2)
+                {
+                    printf("El numero con mayor cantidad de digitos es el numero %d \n", num1);
+                }
+                else
+                {
+                    printf("El numero con mayor cantidad de digitos es el numero %d \n", num2);
+                }
+                printf("\n");
+                // VOLVER A SELECCIONAR EL CASO 
+                printf("Seleccione la actividad que desea realizar con:\n 1. Cantidad de digitos.\n 2. El numero es primo o no.\n 100. Salir\n");
+                scanf("%d", &scan);
+                break;
+            case 2:
+                printf("Numero es primo o no:\n");
+                if (esPrimo(num1) == 1)
+                {
+                    printf("El numero %d es primo.\n", num1);
+                }
+                else
+                {
+                    printf("El numero %d no es primo \n", num1);
+                }
+                if (esPrimo(num2) == 1)
+                {
+                    printf("El numero %d es primo.\n", num2);
+                }
+                else
+                {
+                    printf("El numero %d no es primo \n", num2);
+                }
+                // VOLVER A SELECCIONAR EL CASO 
+                printf("Seleccione la actividad que desea realizar con:\n 1. Cantidad de digitos.\n 2. El numero es primo o no.\n 100. Salir\n");
+                scanf("%d", &scan);
+                break;
+                break;
+            default:
+                printf("No ha seleccionado ninguna opcion.\n");
+                break;
+            }
+        };
     }
     else
     {
