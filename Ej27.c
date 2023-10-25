@@ -51,7 +51,7 @@ int main()
     {
 
         int scan = 0;
-        printf("Seleccione la actividad que desea realizar con:\n 1. Cantidad de digitos.\n 2. El numero es primo o no.\n 100. Salir\n");
+        printf("Seleccione la actividad que desea realizar con:\n 1. Cantidad de digitos.\n 2. El numero es primo o no.\n 3. Mayor cantidad de primos \n 100. Salir\n");
         scanf("%d", &scan);
         printf("\n");
         while (scan != 100)
@@ -102,6 +102,30 @@ int main()
                 printf("Seleccione la actividad que desea realizar con:\n 1. Cantidad de digitos.\n 2. El numero es primo o no.\n 100. Salir\n");
                 scanf("%d", &scan);
                 break;
+            case 3: printf("Se va a contabilizar cual de los dos tiene la mayor cantidad de numeros primos");
+                int barrido1 = 0, barrido2 = 0;
+                for (int k = 0; k <= num1; k++)
+                {
+                    if (esPrimo(k) == 1)
+                    {
+                        barrido1++;
+                    }
+                }
+                for (int l = 0; l <= num2; l++)
+                {
+                    if (esPrimo(l) == 1)
+                    {
+                        barrido2++;
+                    }
+                }
+                printf("La cantidad de primos de %d es %d\n", num1, barrido1);
+                printf("La cantidad de primos de %d es %d\n", num2, barrido2);
+                // VOLVER A SELECCIONAR EL CASO
+                printf("Seleccione la actividad que desea realizar con:\n 1. Cantidad de digitos.\n 2. El numero es primo o no.\n 100. Salir\n");
+                scanf("%d", &scan);
+                break;
+
+            
             default:
                 printf("No ha seleccionado ninguna opcion.\n");
                 break;
