@@ -18,6 +18,7 @@ int main()
             contador++;
         }
     } while (num != 0);
+    printf("A continuacion se realiza la suma de los numeros terminados en 5 y su promedio: \n");
     printf("La suma de los los numeros con digitos terminados en 5 es: %d\n", suma);
     promedio = suma/contador;
     printf("El promedio de la suma es: %f\n", promedio);
