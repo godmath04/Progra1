@@ -39,7 +39,7 @@ bool esPrimo(int numero)
 
 int main()
 {
-    int num1, num2, cantidad1 = 0, cantidad2 = 0;
+    int num1, num2, cantidad1, cantidad2;
 
     printf("Ingrese el primer numero: \n");
     scanf("%d", &num1);
@@ -76,7 +76,7 @@ int main()
                     printf("El numero con mayor cantidad de digitos es el numero %d \n", num2);
                 }
                 printf("\n");
-                // VOLVER A SELECCIONAR EL CASO 
+                // VOLVER A SELECCIONAR EL CASO
                 printf("Seleccione la actividad que desea realizar con:\n 1. Cantidad de digitos.\n 2. El numero es primo o no.\n 100. Salir\n");
                 scanf("%d", &scan);
                 break;
@@ -98,10 +98,9 @@ int main()
                 {
                     printf("El numero %d no es primo \n", num2);
                 }
-                // VOLVER A SELECCIONAR EL CASO 
+                // VOLVER A SELECCIONAR EL CASO
                 printf("Seleccione la actividad que desea realizar con:\n 1. Cantidad de digitos.\n 2. El numero es primo o no.\n 100. Salir\n");
                 scanf("%d", &scan);
-                break;
                 break;
             default:
                 printf("No ha seleccionado ninguna opcion.\n");
