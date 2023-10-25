@@ -14,14 +14,29 @@ int contador(int numero)
 
 int main()
 {
-    int num1, num2, cantidad1 = 0;
+    int num1, num2, cantidad1 = 0, cantidad2 = 0;
 
     printf("Ingrese el primer numero: \n");
     scanf("%d", &num1);
     printf("Ingrese el segundo numero: \n");
     scanf("%d", &num2);
-    cantidad1 = contador(num1);
+
+if (num1 > 0 && num2 > 0) // VERIFICA QUE EL NUMERO SEA POSITIVO
+{
+   cantidad1 = contador(num1);
     printf("La cantidad de digitos del primer numero es: %d", cantidad1);
+    printf("\n");
+     cantidad2 = contador(num2);
+    printf("La cantidad de digitos del segundo numero es: %d", cantidad2);
+}
+else
+{
+    printf("Uno de los numeros ingresados es negativo o cero. Reintente");
+}
+
+
+    
+
 
     return 0;
 }
