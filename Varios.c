@@ -73,12 +73,14 @@ int main()
 {
     int caso = 0;
     int num1 = 0, num2 = 0, num3 = 0, num4 = 0;
+    int num5 = 0;
     printf(" EJERCICIOS VARIOS REPASO \n");
     printf("Ingrese el numero del ejercicio a realizar:\n"
-    "1.Obtencion numero primo.\n"
-    "2.Mayor cantidad de digitos.\n"
-    "3. Obtencion numero mayor\n"
-    "4. Suma de los numeros terminados en 5\n");
+           "1.Obtencion numero primo.\n"
+           "2.Mayor cantidad de digitos.\n"
+           "3. Obtencion numero mayor.\n"
+           "4. Suma de los numeros terminados en 5.\n"
+           "5. Cantidad de los numeros primos hasta el numero ingresado.\n");
     scanf("%d", &caso);
     switch (caso)
     {
@@ -115,7 +117,7 @@ int main()
         {
             printf("Ingrese su numero: ");
             scanf("%d", &num4);
-            if (num4% 10 == 5)
+            if (num4 % 10 == 5)
             {
                 suma = suma + num4;
                 conteo++;
@@ -123,6 +125,20 @@ int main()
         } while (num4 != 0);
         promedio = suma / conteo;
         printf("El promedio de la suma es %d.", promedio);
+
+    case 5:
+        int cantidad_primos = 0;
+        printf("Ingrese el numero para contar la cantidad de primos: ");
+        scanf("%d", &num5);
+
+        for (int i = 2; i <= num5; i++)
+        {
+            if (esPrimo(i) == 1)
+            {
+                cantidad_primos++;
+            }
+        }
+        printf("La cantidad de primos del numero %d es %d. ", num5, cantidad_primos);
 
     default:
         break;
