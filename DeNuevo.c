@@ -44,7 +44,7 @@ int digitoMayor(int num)
         {
             Mayor = auxiliar;
         }
-        num = num/10;
+        num = num / 10;
     }
     return Mayor;
 }
@@ -57,7 +57,12 @@ int main()
            "1. Verificar si un numero es primo.\n"
            "2. Numero de primos que hay hasta un numero.\n"
            "3. Primer numero primo antes de 32768.\n"
-           "4. Cantidad de Digitos\n");
+           "4. Cantidad de Digitos\n"
+           "5. Digito mayor de un numero\n"
+           "6. Utilizando anidadas obtener la secuencia\n"
+           "7. Secuencia de triada\n"
+           "8. Ejercicio 50 del libro\n"
+           "9. Serie Fibonacci\n");
     scanf("%d", &opcion);
     switch (opcion)
     {
@@ -112,6 +117,54 @@ int main()
         printf("Ingrese el numero y se obtendra el digito mayor de dicho numero:\n");
         scanf("%d", &num5);
         printf("El numero mayor de %d es %d.\n", num5, digitoMayor(num5));
+
+    case 6:
+        int n = 0, m = 1;
+        for (int i = 0; i < 10; i++)
+        {
+            printf("%d | %d\n", n, m);
+            n++;
+            if (i % 2 == 0)
+            {
+                m++;
+            }
+        }
+
+    case 7:
+        int k = 1;
+        for (int i = 1; i < 4; i++)
+        {
+            for (int j = 1; j < 4; j++)
+            {
+                printf("%d | %d | %d\n", k, i, j);
+                k++;
+            }
+        }
+
+    case 8:
+        int l = 0;
+        for (int i = 1; i < 3; i++)
+        {
+            for (int j = 1; j < 5; j++)
+            {
+                printf("%d | %d\n", l, i);
+                l++;
+            }
+            
+        }
+
+    case 9: 
+        int primero = 0, segundo = 1, siguiente = 0;
+        printf("Secuencia de Fibonacchi hasta el 1000\n.");
+        while (siguiente <= 1000)
+        {
+            printf("%d ", siguiente);
+            primero = segundo;
+            segundo = siguiente;
+            siguiente = primero + segundo;
+        }
+        
+            
     default:
         break;
     }
